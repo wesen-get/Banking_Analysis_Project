@@ -6,6 +6,8 @@ import seaborn as sns
 from data_cleaning import clean_transaction_data
 from analyzers import run_spending_analysis, run_trend_analysis, aggregate_customer_metrics
 from fraud_detector import flag_anomalies
+from report_generator import export_to_excel_memory
+import io
 
 # Import the NEW charting functions
 from report_generator import (
@@ -102,3 +104,19 @@ with tab4:
 with tab5:
     st.header("Systemic Master Database Ledger")
     st.dataframe(df, use_container_width=True)
+
+    if st.button("Generate Excel Report"):
+
+        excel_data = export_to_excel_memory(
+            spending_summary,
+            trend_summary,
+            customer_ledger,
+            fraud_alerts
+        )
+
+        st.download_button(
+            label="Download Excel Report",
+            data=excel_data,
+            file_name="Financial_Analytics_Report.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )

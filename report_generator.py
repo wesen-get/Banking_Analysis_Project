@@ -1,8 +1,11 @@
-# src/report_generator.py
+# report_generator.py
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import io
+import streamlit as st
+import pandas as pd
+from report_generator import export_to_excel_memory
 # Set a standard theme
 sns.set_theme(style="whitegrid")
 
@@ -96,18 +99,3 @@ def generate_visualizations(spending, trends):
     plt.savefig('outputs/charts/financial_dashboard.png', dpi=300)
     plt.close()
 
-def export_to_excel(spending, trends, customers, fraud):
-    # This remains unchanged
-    print("-> Compiling final automated Excel workbook...")
-    # Ensure Period is string for Excel compatibility
-    trends_export = trends.copy()
-    if pd.api.types.is_period_dtype(trends_export['Year_Month']):
-        trends_export['Year_Month'] = trends_export['Year_Month'].astype(str)
-
-    out_path = "outputs/reports/Financial_Analytics_Report.xlsx"
-    with pd.ExcelWriter(out_path, engine='openpyxl') as writer:
-        trends_export.to_excel(writer, sheet_name='Monthly_Trends', index=False)
-        spending.to_excel(writer, sheet_name='Category_Spending', index=False)
-        customers.to_excel(writer, sheet_name='Customer_Ledger', index=False)
-        fraud.to_excel(writer, sheet_name='Fraud_Alerts', index=False)
-    print(f"🎉 Success! Generated production report files.")
