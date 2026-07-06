@@ -5,3 +5,12 @@ matplotlib
 plotly
 scikit-learn
 openpyxl
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+scikit-learn
+openpyxl
+scipy
