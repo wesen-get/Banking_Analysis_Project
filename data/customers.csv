@@ -1,0 +1,26 @@
+Customer_ID,Customer_Name,Age,Gender,City,Account_Type
+CUST100,Wesen Getnet,56,Male,Gondar,Savings
+CUST101,Almaz Abebe,46,Female,Adama,Checking
+CUST102,Dawit Yohannes,32,Male,Dire Dawa,Student Account
+CUST103,Chala Kebede,60,Male,Addis Ababa,Savings
+CUST104,Aster Tolossa,25,Female,Bahir Dar,Student Account
+CUST105,Makeda Selassie,38,Male,Hawassa,Savings
+CUST106,Yonas Assefa,56,Male,Bahir Dar,Checking
+CUST107,Fatuma Mohammed,36,Male,Hawassa,Premium Checking
+CUST108,Eleni Tsegaye,40,Male,Dire Dawa,Savings
+CUST109,Bekele Zewdu,28,Female,Dire Dawa,Student Account
+CUST110,Customer User 11,28,Male,Dire Dawa,Checking
+CUST111,Customer User 12,41,Female,Hawassa,Savings
+CUST112,Customer User 13,53,Female,Bahir Dar,Student Account
+CUST113,Customer User 14,57,Male,Dire Dawa,Student Account
+CUST114,Customer User 15,41,Female,Gondar,Student Account
+CUST115,Customer User 16,20,Male,Hawassa,Savings
+CUST116,Customer User 17,39,Male,Hawassa,Savings
+CUST117,Customer User 18,19,Female,Bahir Dar,Savings
+CUST118,Customer User 19,41,Non-binary,Hawassa,Premium Checking
+CUST119,Customer User 20,61,Female,Hawassa,Savings
+CUST120,Customer User 21,47,Male,Dire Dawa,Savings
+CUST121,Customer User 22,55,Male,Bahir Dar,Savings
+CUST122,Customer User 23,19,Female,Dire Dawa,Premium Checking
+CUST123,Customer User 24,38,Male,Dire Dawa,Savings
+CUST124,Customer User 25,50,Male,Bahir Dar,Student Account
