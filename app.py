@@ -34,8 +34,6 @@ fraud_alerts = flag_anomalies(df)
 
 # Sidebar (Keep existing)
 st.sidebar.header("Executive Summary")
-# ... (Keep existing Sidebar metric code here) ...
-st.sidebar.header("Executive Summary")
 total_inflow = df[df['Type'] == 'Credit']['Amount'].sum()
 total_outflow = df[df['Type'] == 'Debit']['Amount'].sum()
 
@@ -100,23 +98,29 @@ with tab4:
         st.warning(f"{len(fraud_alerts)} high-risk anomalies flagged.")
         st.dataframe(fraud_alerts, use_container_width=True)
 
-# --- TAB 5: RAW LEDGER AUDIT ---
+# ---------------------------------------
+# TAB 5
+# ---------------------------------------
+
 with tab5:
+
     st.header("Systemic Master Database Ledger")
+
     st.dataframe(df, use_container_width=True)
 
-    if st.button("Generate Excel Report"):
+    st.write(f"Total Transactions : {len(df)}")
 
-        excel_data = export_to_excel_memory(
-            spending_summary,
-            trend_summary,
-            customer_ledger,
-            fraud_alerts
-        )
+    excel_data = export_to_excel_memory(
+        df,
+        spending_summary,
+        trend_summary,
+        customer_ledger,
+        fraud_alerts
+    )
 
-        st.download_button(
-            label="Download Excel Report",
-            data=excel_data,
-            file_name="Financial_Analytics_Report.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
+    st.download_button(
+        label="📥 Download Excel Report",
+        data=excel_data,
+        file_name="Financial_Analytics_Report.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
